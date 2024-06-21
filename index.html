@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SEA Salon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .header .logo {
+            color: #fff;
+            font-size: 24px;
+        }
+        .nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            margin: 0 15px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero-text h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .hero-text p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo">SEA Salon</div>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Stylists</a></li>
+            <li><a href="#">Book Appointment</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </header>
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Salon Image">
+        <div class="hero-text">
+            <h1>SEA Salon</h1>
+            <p>Experience Excellence in Every Cut</p>
+        </div>
+    </section>
 </body>
 </html>
