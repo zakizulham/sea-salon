@@ -4,74 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEA Salon</title>
+    <!-- Adding CSS -->
     <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
+
 <body>
+    <!-- Header Section with Navigation Bar -->
     <header class="header">
         <div class="logo">SEA Salon</div>
         <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Book Appointment</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact Us</a></li>
         </ul>
     </header>
-    <nav class="breadcrumbs">
-        <a href="#">Home</a> &gt; <a href="#">Current Page</a>
-    </nav>
+    
+    <!-- Hero Section with Image and Text -->
     <section class="hero">
-        <img src="hero-image.jpg" alt="Salon Image">
+        <img src="img/hero-image.jpg" alt="Salon Image">
         <div class="hero-text">
-            <h1>SEA Salon</h1>
-            <p>Beauty and Elegance Redefined</p>
+            <h1 class="hero-title">SEA Salon</h1>
+            <p class="hero-slogan">Beauty and Elegance Redefined</p>
         </div>
     </section>
+    
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <h2>About Us</h2>
+        <p>SEA Salon is a premier beauty destination where our top stylists bring elegance and style to life. We pride ourselves on our personalized service and commitment to excellence. Join us for a truly luxurious salon experience.</p>
+    </section>
+    
+    <!-- Main Content Section with Services and CTA -->
     <main>
-        <section class="services">
+        <section id="services" class="services">
             <h2>Our Services</h2>
             <div class="service-item">
-                <img src="service1.jpg" alt="Service 1">
-                <p>Haircut</p>
+                <img src="img/service1.jpg" alt="Facial Treatments">
+                <p>Experience Rejuvenating Facial Treatments</p>
             </div>
             <div class="service-item">
-                <img src="service2.jpg" alt="Service 2">
-                <p>Coloring</p>
+                <img src="img/service2.jpg" alt="Haircuts and Styling">
+                <p>Chic Haircuts and Elegant Styling</p>
             </div>
             <div class="service-item">
-                <img src="service3.jpg" alt="Service 3">
-                <p>Styling</p>
-            </div>
-        </section>
-        <section class="reviews">
-            <h2>Customer Reviews</h2>
-            <div class="review-item">
-                <p>"Great experience!" - Alice</p>
-            </div>
-            <div class="review-item">
-                <p>"Loved my new haircut!" - Bob</p>
-            </div>
-            <div class="review-item">
-                <p>"Amazing service!" - Charlie</p>
+                <img src="img/service3.jpg" alt="Manicure and Pedicure">
+                <p>Pamper Yourself with Our Manicure and Pedicure</p>
             </div>
         </section>
         <section class="cta">
-            <button>Book Now</button>
+            <p>What are you waiting for? Let's go!</p>
+            <button id="book-now">Book Now</button>
         </section>
     </main>
+    
+    <!-- Footer Section with Contact Details and Social Media Links -->
     <footer>
-        <div class="contact-details">
-            <p>Address: 123 Salon Street</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: info@seasalon.com</p>
-        </div>
-        <div class="social-media">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-        </div>
-        <div class="back-to-top">
-            <a href="#">Back to the top</a>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy; 2024 SEA Salon. All rights reserved.</p>
+            </div>
+            <div class="contact-details">
+                <p>Phone Number Thomas: 08123456789</p>
+                <p>Phone Number Sekar: 08164829372</p>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="ico/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="ico/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="ico/twitter-icon.png" alt="Twitter"></a>
+            </div>
         </div>
     </footer>
 </body>

@@ -1,0 +1,206 @@
+/* styles.css */
+/* Define root variables for colors */
+:root {
+    --bg1: #392D2F;
+    --bg2: #544A50;
+    --body: #BAA4A8;
+    --brand: #B69987;
+    --white: #fff;
+}
+
+/* Basic styles for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--bg1);
+}
+
+/* Header styles with gradient background and transparency */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(var(--brand), var(--bg2) 50%, var(--bg1));
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo styles */
+.header .logo {
+    color: var(--white);
+    font-size: 24px;
+}
+
+/* Navigation styles */
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation item styles */
+.nav li {
+    margin: 0 15px;
+}
+
+/* Navigation link styles with hover and active states */
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--brand);
+}
+
+.nav a.active {
+    color: var(--brand);
+    font-weight: bold;
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    text-align: left;
+    color: var(--white);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.hero-title {
+    font-size: 50px;
+    font-family: 'Georgia', serif; /* Elegant font for title */
+    margin: 0;
+}
+
+.hero-slogan {
+    font-size: 24px;
+    font-family: 'Verdana', sans-serif; /* Lighter font for slogan */
+    margin: 10px 0 0;
+}
+
+/* About Us section styles */
+.about-us {
+    text-align: center;
+    padding: 20px;
+}
+
+.about-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 18px;
+    color: var(--bg2);
+}
+
+/* Services section styles */
+.services {
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-item {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover; /* Ensures images are covered without distortion */
+    object-position: center; /* Focuses on the center of the image */
+}
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--bg1);
+}
+
+/* CTA section styles */
+.cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cta button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--bg1);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: var(--brand);
+}
+
+/* Footer section styles */
+footer {
+    background-color: var(--bg2);
+    color: var(--white);
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    text-align: right;
+}
+
+.contact-details p, .social-media a {
+    margin: 10px 0;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    object-fit: contain; /* Ensures icons fit within the area without distortion */
+}
