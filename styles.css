@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(var(--bg1), var(--bg1) 80%, transparent);
+    background: linear-gradient(var(--brand), var(--bg2) 50%, var(--bg1));
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -135,8 +135,8 @@ body {
     width: 100%;
     height: auto;
     max-height: 200px;
-    object-fit: cover; /* Ensures images are covered without distortion */
-    object-position: center; /* Focuses on the center of the image */
+    object-fit: cover; 
+    object-position: center;
 }
 
 .service-item p {
@@ -226,6 +226,45 @@ body {
 .review-item .review-stars {
     color: var(--brand);
     margin-bottom: 10px;
+}
+
+/* Reservation form styles */
+.reservation {
+    text-align: center;
+    padding: 20px;
+}
+
+.reservation h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.reservation form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation form input, .reservation form select {
+    width: 80%;
+    max-width: 500px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.reservation form button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--bg1);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation form button:hover {
+    background-color: var(--brand);
 }
 
 /* Footer styles */

@@ -59,19 +59,36 @@
         </section>
     </main>
 
+    <!-- Reservation Form Section -->
+    <section id="reservation" class="reservation">
+        <h2>Make a Reservation</h2>
+        <form id="reservation-form">
+            <input type="text" id="res-name" placeholder="Your Name" required>
+            <input type="tel" id="res-phone" placeholder="Active Phone Number" required>
+            <select id="res-service" required>
+                <option value="" disabled selected>Select Service</option>
+                <option value="Haircuts and Styling">Haircuts and Styling</option>
+                <option value="Manicure and Pedicure">Manicure and Pedicure</option>
+                <option value="Facial Treatments">Facial Treatments</option>
+            </select>
+            <input type="datetime-local" id="res-datetime" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
     <!-- Customer Reviews Section -->
     <section id="reviews" class="reviews">
         <h2>Customer Reviews</h2>
         <div class="review-form">
-            <input type="text" id="customer-name" placeholder="Your Name">
-            <select id="star-rating">
+            <input type="text" id="customer-name" placeholder="Your Name" required>
+            <select id="star-rating" required>
                 <option value="5">5 Stars</option>
                 <option value="4">4 Stars</option>
                 <option value="3">3 Stars</option>
                 <option value="2">2 Stars</option>
                 <option value="1">1 Star</option>
             </select>
-            <textarea id="comment" placeholder="Your Comment"></textarea>
+            <textarea id="comment" placeholder="Your Comment" required></textarea>
             <button id="submit-review">Submit Review</button>
         </div>
         <div id="review-list"></div>
