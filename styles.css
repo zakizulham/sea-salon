@@ -135,8 +135,8 @@ body {
     width: 100%;
     height: auto;
     max-height: 200px;
-    object-fit: cover; 
-    object-position: center;
+    object-fit: cover; /* Ensures images are covered without distortion */
+    object-position: center; /* Focuses on the center of the image */
 }
 
 .service-item p {
@@ -170,130 +170,37 @@ body {
     background-color: var(--brand);
 }
 
-/* Reviews section styles */
-.reviews {
-    text-align: center;
-    padding: 20px;
-}
-
-.reviews h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.review-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.review-form input, .review-form select, .review-form textarea {
-    width: 80%;
-    max-width: 500px;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.review-form button {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: var(--bg1);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.review-form button:hover {
-    background-color: var(--brand);
-}
-
-.review-item {
+/* Footer section styles */
+footer {
     background-color: var(--bg2);
     color: var(--white);
-    margin: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: left;
-}
-
-.review-item .review-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.review-item .review-stars {
-    color: var(--brand);
-    margin-bottom: 10px;
-}
-
-/* Reservation form styles */
-.reservation {
-    text-align: center;
     padding: 20px;
-}
-
-.reservation h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.reservation form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.reservation form input, .reservation form select {
-    width: 80%;
-    max-width: 500px;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.reservation form button {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: var(--bg1);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.reservation form button:hover {
-    background-color: var(--brand);
-}
-
-/* Footer styles */
-footer {
-    background-color: var(--bg1);
-    color: var(--white);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.contact-details p, .social-media a, .back-to-top a {
+.contact-details {
+    text-align: right;
+}
+
+.contact-details p, .social-media a {
     margin: 10px 0;
     color: var(--white);
     text-decoration: none;
 }
 
-.social-media a img {
-    width: 30px;
-    margin: 0 10px;
+.social-media {
+    text-align: center;
 }
 
-.back-to-top a {
-    font-size: 14px;
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    object-fit: contain; /* Ensures icons fit within the area without distortion */
 }
