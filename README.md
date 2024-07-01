@@ -13,3 +13,6 @@ Changelog
 
 1. Membuat sebuah laman beranda SEA Salon
    -Fokus utama pada NAMA, SLOGAN, LAYANAN, dan Contact Details
+
+2. Membuat interactivity
+   -Menambahkan customer review system yang hanya menyimpan reviews di saat itu
