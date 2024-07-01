@@ -1,30 +1,65 @@
 /* scripts.js */
 
-/**
- * Wait until the DOM content is fully loaded.
- */
-document.addEventListener('DOMContentLoaded', function() {
-    /**
-     * Handle navigation link clicks for smooth scrolling.
-     */
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to handle smooth scrolling
+    function smoothScroll(target) {
+        document.querySelector(target).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    // Add event listeners to navigation links for smooth scrolling
+    document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-            // Set active class to the clicked link
-            navLinks.forEach(link => link.classList.remove('active'));
+            const target = this.getAttribute('href');
+            smoothScroll(target);
+            // Highlight active link
+            document.querySelectorAll('.nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
             this.classList.add('active');
         });
     });
 
-    /**
-     * Scroll to contact section on Book Now button click.
-     */
-    const bookNowButton = document.getElementById('book-now');
-    bookNowButton.addEventListener('click', function() {
-        document.querySelector('.contact-details').scrollIntoView({ behavior: 'smooth' });
+    // Event listener for Book Now button
+    document.getElementById('book-now').addEventListener('click', () => {
+        smoothScroll('#contact');
     });
+
+    // State to hold customer reviews
+    const reviews = [];
+
+    // Function to display reviews
+    function displayReviews() {
+        const reviewList = document.getElementById('review-list');
+        reviewList.innerHTML = reviews.map(review => `
+            <div class="review-item">
+                <div class="review-name">${review.name}</div>
+                <div class="review-stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+                <div class="review-comment">${review.comment}</div>
+            </div>
+        `).join('');
+    }
+
+    // Event listener for review submission
+    document.getElementById('submit-review').addEventListener('click', () => {
+        const name = document.getElementById('customer-name').value;
+        const stars = parseInt(document.getElementById('star-rating').value);
+        const comment = document.getElementById('comment').value;
+
+        if (name && comment) {
+            reviews.push({ name, stars, comment });
+            displayReviews();
+            // Clear form inputs
+            document.getElementById('customer-name').value = '';
+            document.getElementById('star-rating').value = '5';
+            document.getElementById('comment').value = '';
+        } else {
+            alert('Please enter your name and comment.');
+        }
+    });
+
+    // Initial display of reviews
+    displayReviews();
 });
