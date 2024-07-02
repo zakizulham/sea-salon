@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for Book Now button
     document.getElementById('book-now').addEventListener('click', () => {
-        smoothScroll('#contact');
+        smoothScroll('#reservation');
     });
 
     // State to hold customer reviews
@@ -32,14 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display reviews
     function displayReviews() {
-        const reviewList = document.getElementById('review-list');
-        reviewList.innerHTML = reviews.map(review => `
-            <div class="review-item">
-                <div class="review-name">${review.name}</div>
-                <div class="review-stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
-                <div class="review-comment">${review.comment}</div>
-            </div>
-        `).join('');
+        fetch('http://localhost:3000/reviews')
+            .then(response => response.json())
+            .then(data => {
+                const reviewList = document.getElementById('review-list');
+                reviewList.innerHTML = data.map(review => `
+                    <div class="review-item">
+                        <div class="review-name">${review.name}</div>
+                        <div class="review-stars">${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}</div>
+                        <div class="review-comment">${review.comment}</div>
+                    </div>
+                `).join('');
+            });
     }
 
     // Event listener for review submission
@@ -49,14 +53,53 @@ document.addEventListener('DOMContentLoaded', () => {
         const comment = document.getElementById('comment').value;
 
         if (name && comment) {
-            reviews.push({ name, stars, comment });
-            displayReviews();
-            // Clear form inputs
-            document.getElementById('customer-name').value = '';
-            document.getElementById('star-rating').value = '5';
-            document.getElementById('comment').value = '';
+            fetch('http://localhost:3000/reviews', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, stars, comment })
+            })
+            .then(response => response.json())
+            .then(() => {
+                displayReviews();
+                // Clear form inputs
+                document.getElementById('customer-name').value = '';
+                document.getElementById('star-rating').value = '5';
+                document.getElementById('comment').value = '';
+            });
         } else {
             alert('Please enter your name and comment.');
+        }
+    });
+
+    // Event listener for reservation submission
+    document.getElementById('reservation-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const name = document.getElementById('res-name').value;
+        const phone = document.getElementById('res-phone').value;
+        const service = document.getElementById('res-service').value;
+        const datetime = document.getElementById('res-datetime').value;
+
+        if (name && phone && service && datetime) {
+            fetch('http://localhost:3000/reservations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, phone, service, datetime })
+            })
+            .then(response => response.json())
+            .then(() => {
+                alert('Reservation successfully submitted!');
+                // Clear form inputs
+                document.getElementById('res-name').value = '';
+                document.getElementById('res-phone').value = '';
+                document.getElementById('res-service').value = '';
+                document.getElementById('res-datetime').value = '';
+            });
+        } else {
+            alert('Please fill out all fields.');
         }
     });
 
