@@ -14,7 +14,7 @@
     <header class="header">
         <div class="logo">SEA Salon</div>
         <ul class="nav">
-            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#hero" class="nav-link">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#services" class="nav-link">Services</a></li>
             <li><a href="#contact" class="nav-link">Contact Us</a></li>
@@ -23,7 +23,7 @@
     
     <!-- Hero Section with Image and Text -->
     <section class="hero">
-        <img src="img/hero-image.jpg" alt="Salon Image">
+        <img src="./img/hero-image.jpg" alt="Salon Image">
         <div class="hero-text">
             <h1 class="hero-title">SEA Salon</h1>
             <p class="hero-slogan">Beauty and Elegance Redefined</p>
@@ -41,15 +41,15 @@
         <section id="services" class="services">
             <h2>Our Services</h2>
             <div class="service-item">
-                <img src="img/service1.jpg" alt="Facial Treatments">
+                <img src="./img/service1.jpg" alt="Facial Treatments">
                 <p>Experience Rejuvenating Facial Treatments</p>
             </div>
             <div class="service-item">
-                <img src="img/service2.jpg" alt="Haircuts and Styling">
+                <img src="./img/service2.jpg" alt="Haircuts and Styling">
                 <p>Chic Haircuts and Elegant Styling</p>
             </div>
             <div class="service-item">
-                <img src="img/service3.jpg" alt="Manicure and Pedicure">
+                <img src="./img/service3.jpg" alt="Manicure and Pedicure">
                 <p>Pamper Yourself with Our Manicure and Pedicure</p>
             </div>
         </section>
@@ -59,19 +59,36 @@
         </section>
     </main>
 
+    <!-- Reservation Form Section -->
+    <section id="reservation" class="reservation">
+        <h2>Make a Reservation</h2>
+        <form id="reservation-form">
+            <input type="text" id="res-name" placeholder="Your Name" required>
+            <input type="tel" id="res-phone" placeholder="Active Phone Number" required>
+            <select id="res-service" required>
+                <option value="" disabled selected>Select Service</option>
+                <option value="Haircuts and Styling">Haircuts and Styling</option>
+                <option value="Manicure and Pedicure">Manicure and Pedicure</option>
+                <option value="Facial Treatments">Facial Treatments</option>
+            </select>
+            <input type="datetime-local" id="res-datetime" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
     <!-- Customer Reviews Section -->
     <section id="reviews" class="reviews">
         <h2>Customer Reviews</h2>
         <div class="review-form">
-            <input type="text" id="customer-name" placeholder="Your Name">
-            <select id="star-rating">
+            <input type="text" id="customer-name" placeholder="Your Name" required>
+            <select id="star-rating" required>
                 <option value="5">5 Stars</option>
                 <option value="4">4 Stars</option>
                 <option value="3">3 Stars</option>
                 <option value="2">2 Stars</option>
                 <option value="1">1 Star</option>
             </select>
-            <textarea id="comment" placeholder="Your Comment"></textarea>
+            <textarea id="comment" placeholder="Your Comment" required></textarea>
             <button id="submit-review">Submit Review</button>
         </div>
         <div id="review-list"></div>
@@ -88,9 +105,9 @@
                 <p>Phone Number Sekar: 08164829372</p>
             </div>
             <div class="social-media">
-                <a href="#"><img src="ico/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="ico/instagram-icon.png" alt="Instagram"></a>
-                <a href="#"><img src="ico/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="./ico/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="./ico/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="./ico/twitter-icon.png" alt="Twitter"></a>
             </div>
         </div>
     </footer>
